@@ -23,16 +23,17 @@
     <link href="css/jquery.bxslider.css" rel="stylesheet" />
     <!-- Responsive -->
     <link href="css/responsive.css" rel="stylesheet" />
-    <script defer src="assign2-16032022.js"></script>
-    <style>
+        <style>
+            
         .error-msg {
             color: red;
         }
     </style>
+    
     <script src="index.js"></script>
 </head>
 
-<body>
+<body >
     <!--wrapper-starts-->
     <div id="wrapper">
         <!--header-starts-->
@@ -118,50 +119,50 @@
                         need to collect some information about you. Read each question carfully and select or place a
                         tick in the box for each of your characteristics. Please answer as honestly as you can,
                         otherwise you may be disappointed with your matches and they with you.</div>
-                    <form name="forms" action="#" onsubmit="return validation()">
                         <div class="form_container_block">
+                            <form name="forms" action="#" id="myForm" onsubmit="return validation()">
 
                             <ul>
                                 <li class="fileds">
                                     <div class="name_fileds">
                                         <label>First Name </label>
-                                        <input name="firstname" type="text" id="firstname"  />
+                                        <input name="firstname" type="text" id="firstname" autocomplete="off"  />
                                         <span class="error-msg" id="firstname-error"></span>
                                     </div>
                                     <div class="name_fileds">
                                         <label>Last Name </label>
-                                        <input name="lastname" type="text" id="lastname" />
+                                        <input name="lastname" type="text" id="lastname" autocomplete="off" />
                                         <span class="error-msg" id="lastname-error"></span>
                                     </div>
                                 </li>
                                 <li class="fileds">
                                     <div class="phone_fileds">
                                         <label>Phone No </label>
-                                        <input name="phone" type="text" id="phone" />
+                                        <input name="phone" type="text" id="phone" autocomplete="off" />
                                         <span class="error-msg" id="phone-error"></span>
                                     </div>
                                     <div class="phone_fileds">
                                         <label>Office No</label>
-                                        <input name="office" type="text" id="phone-office" />
+                                        <input name="office" type="text" id="phone-office" autocomplete="off" />
                                         <span class="error-msg" id="officeno-error"></span>
                                     </div>
                                 </li>
                                 <li class="fileds">
                                     <div class="email_fileds">
                                         <label>Email </label>
-                                        <input name="email" type="text" id="email" />
+                                        <input name="email" type="text" id="email"autocomplete="off" />
                                         <span class="error-msg" id="email-error"></span>
                                     </div>
                                     <div class="pass_fileds">
                                         <label>Password </label>
-                                        <input name="password" type="text" id="password" />
+                                        <input name="password" type="password" id="password" />
                                         <span class="error-msg" id="password-error"></span>
                                     </div>
                                 </li>
                                 <li class="fileds">
                                     <div class="pass_fileds">
                                         <label>Confirm Password </label>
-                                        <input name="password" type="text" id="conpassword" />
+                                        <input name="password" type="password" id="conpassword" />
                                         <span class="error-msg" id="con-password-error"></span>
                                     </div>
                                     <div class="dob_fileds selectbox">
@@ -169,7 +170,7 @@
                                         <ul>
                                             <li>
                                                 <select name="month" class="select month" id="birth-month"
-                                                    onchange="calculateAge()">
+                                                    onchange="calculateAge()" autocomplete="off">
                                                     <option value="month">month</option>
                                                     <option value="1">Jan</option>
                                                     <option value="2">Feb</option>
@@ -187,7 +188,7 @@
                                             </li>
                                             <li>
                                                 <select name="day" class="select day" id="birth-day"
-                                                    onchange="calculateAge()">
+                                                    onchange="calculateAge()" autocomplete="off">
                                                     <option value="day">day</option>
                                                     <option value="1">01</option>
                                                     <option value="2">02</option>
@@ -227,7 +228,7 @@
 
                                             <li>
                                                 <select name="year" class="select year" id="birth-year"
-                                                    onchange="calculateAge()">
+                                                    onchange="calculateAge()" autocomplete="off">
                                                     <option value="year">year</option>
                                                 </select>
                                             </li>
@@ -238,17 +239,17 @@
                                 <li class="fileds">
                                     <div class="age_fileds">
                                         <label>Age </label>
-                                        <input name="age" type="text" id="txt-age" disabled />
+                                        <input name="age" type="text" id="txt-age" disabled autocomplete="off" />
                                         <span class="error-msg" id="age-error"></span>
                                     </div>
                                     <div class="gender_fileds">
                                         <label>Gender </label>
                                         <ul>
                                             <li><input type="radio" class="radio" id="residence1" name="gender"
-                                                    value="male" /><label class="radio-label"
+                                                    value="male" autocomplete="off" /><label class="radio-label"
                                                     for="residence1">Male</label></li>
                                             <li><input type="radio" class="radio" id="residence2" name="gender"
-                                                    value="female" /><label class="radio-label"
+                                                    value="female" autocomplete="off" /><label class="radio-label"
                                                     for="residence2">Female</label></li>
                                         </ul>
                                         <span class="error-msg" id="gender-error"></span>
@@ -259,21 +260,21 @@
                                         <label>Interest</label>
                                         <ul>
                                             <li><input type="checkbox" class="checkbox" id="checkbox_sample18"
-                                                    name="chkbx-activity" /> 
+                                                    name="chkbx-activity" autocomplete="off" /> 
                                                     <label class="css-label"
                                                     for="checkbox_sample18">Biking</label></li>
                                             <li><input type="checkbox" class="checkbox" id="checkbox_sample19"
-                                                    name="chkbx-activity" /> <label class="css-label"
+                                                    name="chkbx-activity" / autocomplete="off"> <label class="css-label"
                                                     for="checkbox_sample19">Reading</label></li>
                                             <li><input type="checkbox" class="checkbox" id="checkbox_sample20"
-                                                    name="chkbx-activity" /> 
+                                                    name="chkbx-activity" autocomplete="off" /> 
                                                     <label class="css-label" for="checkbox_sample20">Playing</label></li>
                                         </ul> 
                                         <span class="error-msg" id="interror"></span>
                                     </div>
                                     <div class="about_you_fileds">
                                         <label>About you </label>
-                                        <textarea id="txt-about" name="text"></textarea>
+                                        <textarea id="txt-about" name="text" autocomplete="off"></textarea>
                                         <span class="error-msg" id="aberror"></span>
                                     </div>
                                 </li>

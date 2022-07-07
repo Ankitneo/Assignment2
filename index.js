@@ -213,6 +213,7 @@ function calculateAge(){
         document.getElementById("day30").style.display="block";
         document.getElementById("day31").style.display = "none";
     };
+    
   if(month == "2" && (year % 4 == 0)){
     document.getElementById("day29").style.display="block";
             document.getElementById("day30").style.display = "none";

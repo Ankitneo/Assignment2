@@ -191,33 +191,58 @@ function calculateAge(){
     let  month= document.getElementById("birth-month").value;
     let  year= document.getElementById("birth-year").value;
     if(month == "4"){
+        document.getElementById("day29").style.display="block";
+        document.getElementById("day30").style.display="block";
+        
         document.getElementById("day31").style.display = "none";
     };
     if(month == "6" ){
+        document.getElementById("day29").style.display="block";
+        document.getElementById("day30").style.display="block";
+        
         document.getElementById("day31").style.display = "none";
     };
     if(month == "9" ){
+        document.getElementById("day29").style.display="block";
+        document.getElementById("day30").style.display="block";
+
         document.getElementById("day31").style.display = "none";
     };
     if(month == "11"){
+        document.getElementById("day29").style.display="block";
+        document.getElementById("day30").style.display="block";
         document.getElementById("day31").style.display = "none";
     };
   if(month == "2" && (year % 4 == 0)){
+    document.getElementById("day29").style.display="block";
             document.getElementById("day30").style.display = "none";
             document.getElementById("day31").style.display = "none";
-    }else if(month == "2" && (year % 4 != 0)){
+    }else if(month == "2" && (!(year % 4)== 0)){
             document.getElementById("day29").style.display = "none";
             document.getElementById("day30").style.display = "none";
             document.getElementById("day31").style.display = "none";
+    }
+    else if(month=="1" || month=="3"|| month=="5"|| month=="7"|| month=="8" ){
+        document.getElementById("day29").style.display="block";
+        document.getElementById("day30").style.display="block";
+        document.getElementById("day31").style.display="block";
     };
     if( day != "day" && month != "month" && year != "year" ){
         var stringDate = month + "/" + day + "/" + year 
         var timestamp = Date.parse(stringDate);
         var dateObject = new Date(timestamp);
-
         var currentYear = new Date().getFullYear();
         var birthYear = dateObject.getFullYear();
         var age = currentYear - birthYear;
+        var today = new Date();
+    var birthDate = new Date(stringDate);
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age=age-1;
+        m=12+m
+    }
+    var age=String(age)+String("."+m);
         document.getElementById("txt-age").value = age;
     }
 };
